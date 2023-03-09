@@ -5,11 +5,6 @@ class Calculator extends StatelessWidget {
   Calculator({super.key});
   final List buttonsList = [
     'C',
-    /* const Icon(
-      Icons.backspace_rounded,
-      size: 2,
-    ) */
-    'C',
     '⌫',
     '%',
     '÷',

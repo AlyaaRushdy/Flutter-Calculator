@@ -15,7 +15,7 @@ class ElementBox extends StatelessWidget {
         child: Expanded(
           child: Text(
             element,
-            style: TextStyle(fontSize: 22),
+            style: const TextStyle(fontSize: 22),
           ),
         ),
       ),
