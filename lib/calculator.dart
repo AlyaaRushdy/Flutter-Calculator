@@ -70,6 +70,7 @@ class Calculator extends StatelessWidget {
               itemBuilder: (context, index) {
                 return ElementBox(
                   element: buttonsList[index],
+                  textColor: Colors.black,
                 );
               },
             ),
