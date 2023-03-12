@@ -20,35 +20,41 @@ class Calculator2 extends StatelessWidget {
     '2',
     '3',
     '+',
-    '|',
+    '-\\+',
     '0',
     '.',
     '=',
   ];
   @override
   Widget build(BuildContext context) {
+    Color orangeText = Theme.of(context).primaryColor;
+    Color blackText = Colors.black;
+    var result = 0, userInput = " ";
+
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
+          Container(
             height: MediaQuery.of(context).size.height * (1 / 5) - 5,
-            child: Expanded(
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                child: const Expanded(
-                  child: Text("data"),
-                ),
+            alignment: Alignment.centerRight,
+            margin: const EdgeInsets.only(right: 5),
+            child: Text(
+              userInput.toString(),
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                fontSize: 32,
               ),
             ),
           ),
-          SizedBox(
+          Container(
             height: MediaQuery.of(context).size.height * (1 / 5),
-            child: Expanded(
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                child: const Expanded(
-                  child: Text("result"),
-                ),
+            alignment: Alignment.centerRight,
+            margin: const EdgeInsets.only(right: 5),
+            child: Text(
+              result.toString(),
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                fontSize: 32,
               ),
             ),
           ),
@@ -64,42 +70,44 @@ class Calculator2 extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    ElementBox(element: buttonsList[0]),
-                    ElementBox(element: buttonsList[1]),
-                    ElementBox(element: buttonsList[2]),
-                    ElementBox(element: buttonsList[3]),
+                    ElementBox(element: buttonsList[0], textColor: orangeText),
+                    ElementBox(element: buttonsList[1], textColor: orangeText),
+                    ElementBox(element: buttonsList[2], textColor: orangeText),
+                    ElementBox(element: buttonsList[3], textColor: orangeText),
                   ],
                 ),
                 Row(
                   children: [
-                    ElementBox(element: buttonsList[4]),
-                    ElementBox(element: buttonsList[5]),
-                    ElementBox(element: buttonsList[6]),
-                    ElementBox(element: buttonsList[7]),
+                    ElementBox(element: buttonsList[4], textColor: blackText),
+                    ElementBox(element: buttonsList[5], textColor: blackText),
+                    ElementBox(element: buttonsList[6], textColor: blackText),
+                    ElementBox(element: buttonsList[7], textColor: orangeText),
                   ],
                 ),
                 Row(
                   children: [
-                    ElementBox(element: buttonsList[8]),
-                    ElementBox(element: buttonsList[9]),
-                    ElementBox(element: buttonsList[10]),
-                    ElementBox(element: buttonsList[11]),
+                    ElementBox(element: buttonsList[8], textColor: blackText),
+                    ElementBox(element: buttonsList[9], textColor: blackText),
+                    ElementBox(element: buttonsList[10], textColor: blackText),
+                    ElementBox(element: buttonsList[11], textColor: orangeText),
                   ],
                 ),
                 Row(
                   children: [
-                    ElementBox(element: buttonsList[12]),
-                    ElementBox(element: buttonsList[13]),
-                    ElementBox(element: buttonsList[14]),
-                    ElementBox(element: buttonsList[15]),
+                    ElementBox(element: buttonsList[12], textColor: blackText),
+                    ElementBox(element: buttonsList[13], textColor: blackText),
+                    ElementBox(element: buttonsList[14], textColor: blackText),
+                    ElementBox(element: buttonsList[15], textColor: orangeText),
                   ],
                 ),
                 Row(
                   children: [
-                    ElementBox(element: buttonsList[16]),
-                    ElementBox(element: buttonsList[17]),
-                    ElementBox(element: buttonsList[18]),
-                    ElementBox(element: buttonsList[19]),
+                    ElementBox(element: buttonsList[16], textColor: blackText),
+                    ElementBox(element: buttonsList[17], textColor: blackText),
+                    ElementBox(element: buttonsList[18], textColor: orangeText),
+                    Expanded(
+                      child: EqualSign(element: buttonsList[19]),
+                    ),
                   ],
                 ),
               ],
